@@ -165,3 +165,173 @@ body{
 /* 
 **  Header Section end's here **
 */
+
+
+/* 
+	**  About Section start's here **
+*/
+#about{
+	padding: 80px 0;
+	height: 100vh;
+}
+
+	.row{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap:wrap ;
+	}
+
+	.about-image{
+		flex-basis: 35%;
+	}
+
+		.about-image img{
+			width: 100%;
+		}
+
+
+	.about-text{
+		flex-basis: 60%;
+	}
+	
+		.about-text h1{
+			font-size: 60px;
+			padding: 50px 5px;
+			font-weight: 600;
+			color: rgb(203, 203, 209);
+		}
+		
+		.about-text .socials {
+			padding: 0 0;
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-evenly;	
+			transition: padding 0.4s;
+		}
+		
+		.about-text .socials:hover {
+			padding: 20px 0px;
+		}
+
+
+		.about-text .socials .card {
+			position: relative;
+			border-radius: 10px;
+		}
+
+		.about-text .socials .card .icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: 0.7s;
+			z-index: 1;
+		}
+
+		.about-text .socials .card:nth-child(1) .icon {
+			background: #0077b5;			}
+
+		.about-text .socials .card:nth-child(2) .icon {
+			background: #282828;
+		}
+
+		.about-text .socials .card:nth-child(3) .icon {
+			background: #1D9BF0;
+		}
+
+
+		.about-text .socials .card .icon .fa {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 80px;
+			transition: 0.7s;
+			color: #fff;
+		}
+
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 80px;
+			transition: 0.7s;
+			color: whitesmoke;
+		}
+
+		.about-text .socials .card .face {
+			width: 150px;
+			height: 150px;
+			transition: 0.5s;
+		}
+
+		.about-text .socials .card .face.face1 {
+			position: relative;
+			background: #333;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+			transform: translateY(100px);
+		}
+
+		.about-text .socials .card:hover .face.face1{
+			transform: translateY(0px);
+		}
+
+		.about-text .socials .card .face.face1 .content {
+			opacity: 1;
+			transition: 0.5s;
+		}
+
+		.about-text .socials .card:hover .face.face1 .content {
+			opacity: 1;
+		}
+
+		.about-text .socials .card .face.face1 .content i{
+			max-width: 100px;
+		}
+
+		.about-text .socials .card .face.face2 {
+			position: relative;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			box-sizing: border-box;
+			transform: translateY(-50px);
+		}
+
+		.about-text .socials .card:hover .face.face2{
+			transform: translateY(0);
+		}
+
+		.about-text .socials .card .face.face2 .content p {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			color: #4d4d4d;
+		}
+
+		.about-text .socials .card .face.face2 .content h3 {
+			margin: 0 0 10px 0;
+			padding: 0;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			color: #333333;
+		} 
+
+		.about-text .socials a {
+			text-decoration: none;
+			color: #333333;
+		}
+
+/* 
+**  About Section end's here **
+*/
