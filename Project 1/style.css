@@ -19,3 +19,149 @@ body{
 .container{
     padding: 10px 10%;
 }
+
+/* 
+	** Header Section start's here **
+ */
+
+ header {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+		url("images/4d-ultra-hd-ring-of-fire-p6l72ajb7nyvvtof.jpg");
+	background-size: cover;
+	background-position: center;
+}
+/* * background with linear-gradient for extra darkning the background image */
+
+	nav {
+		width: 100%;
+		height: 100px;
+		position: fixed;
+		background: linear-gradient(to bottom, #0d1237 ,#0d1237c5 ,transparent);
+		color: whitesmoke;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		z-index: 2;
+	}
+	/* separate background linear gradient for navbar look */
+
+	.logo {
+		font-size: 2em;
+		letter-spacing: 1px;
+	}
+
+	.menu a.animated-button {
+		text-decoration: none;
+		color: rgb(215, 215, 215);
+		margin: 10px;
+		padding: 50px 10px 5px 10px;
+		font-size: 20px;
+		color: #fff;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	}
+
+	a.animated-button:hover {
+		color: #000 !important;
+		background-color: transparent;
+	}
+
+	a.animated-button:hover:before {
+		top: 0%;
+		bottom: auto;
+		height: 100%;
+	}
+
+	a.animated-button:before {
+		display: block;
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		height: 0px;
+		width: 100%;
+		z-index: -1;
+		content: "";
+		color: #000 !important;
+		background: #4645d7;
+		transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	}
+
+	.register a {
+		text-decoration: none;
+		color: rgb(215, 215, 215);
+		padding: 10px 20px;
+		font-size: 20px;
+
+		background-color: #222690;
+		border: 2px solid #222690;
+		box-sizing: border-box;
+		border-radius: 5px;
+		transition: border, background ease-in-out 0.4s;
+	}
+
+	.register a:hover {
+		background: transparent;
+		border: 2px solid #222690;
+	}
+
+	.header-text {
+		max-width: 650px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: whitesmoke;
+	}
+
+	.header-text span {
+		letter-spacing: 5px;
+	}
+
+	.header-text h1 {
+		font-size: 3em;
+	}
+
+	.header-text a {
+		text-decoration: none;
+		color: rgb(215, 215, 215);
+		padding: 10px 20px;
+		font-size: 20px;
+		background-color: transparent;
+		border: 2px #222690 solid;
+		border-radius: 5px;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	}
+
+	.header-text a:hover {
+		color: #fcfc80 !important;
+		background-color: transparent;
+		text-shadow: none;
+	}
+	.header-text a:hover:before {
+		bottom: 0%;
+		top: auto;
+		height: 100%;
+	}
+	.header-text a:before {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 0px;
+		width: 100%;
+		z-index: -1;
+		content: "";
+		color: #000 !important;
+		background: #222690;
+		transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+	}
+
+/* 
+**  Header Section end's here **
+*/
