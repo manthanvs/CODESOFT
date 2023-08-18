@@ -1,0 +1,21 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Times New Roman", "Poppins", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+/* * scrolling behaviour is given smooth, scrolling from navbar to about,services,updates,contact sections */
+
+body{
+	background: #080808;
+	color: whitesmoke;
+}
+
+
+.container{
+    padding: 10px 10%;
+}
