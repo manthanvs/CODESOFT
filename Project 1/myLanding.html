@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Landing Page</title>
+		<title>Landing Page-X</title>
 
 		<link rel="stylesheet" href="style.css" />
 		<link
@@ -14,19 +14,17 @@
 	</head>
 	<body>
 		<!-- Header Section start's here -->
-
 		<header id="header">
 			<nav>
 				<div class="logo">Landing Page-X</div>
-				<div class="menu">
+				<div class="menu" id="sidemenu">
 					<a href="#header" class="animated-button">Home</a>
 					<a href="#about" class="animated-button">About</a>
 					<a href="#services" class="animated-button">Services</a>
 					<a href="#contact" class="animated-button">Contact</a>
+					<i class="fa fa-times" onclick="closemenu()"></i>
 				</div>
-				<div class="register">
-					<a href="#">Register</a>
-				</div>
+				<i class="fa fa-bars" onclick="openmenu()"></i>
 			</nav>
 			<div class="container">
 				<section class="header-text">
@@ -38,9 +36,8 @@
 				</section>
 			</div>
 		</header>
-		
 		<!-- Header Section end's here -->
-				
+
 		<!-- About Section start's here -->
 		<div id="about">
 			<div class="container">
@@ -53,7 +50,7 @@
 						/></picture>
 					</div>
 					<div class="about-text">
-						<h1>About us</h1>
+						<h1 class="sub-title">About us</h1>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Id ea reiciendis nostrum voluptatibus vitae
@@ -153,6 +150,154 @@
 		</div>
 		<!-- About Section end's here -->
 
+		<!-- Services Section start's here -->
+		<div id="services">
+			<div class="container">
+				<h1 class="sub-title">Our Services</h1>
+				<div class="services-list">
+					<div>
+						<a href="https://www.amazon.com/" target="_blank">
+							<i
+								class="fa fa-amazon r-icon"
+								aria-hidden="true"></i>
+						</a>
+						<h2>Clothes Desgin</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit. Accusantium quae velit voluptas.
+						</p>
+						<a href="https://www.amazon.com/" target="_blank"
+							>Learn More</a
+						>
+					</div>
 
+					<div>
+						<a href="https://www.flipkart.com/" target="_blank">
+							<i
+								class="fa fa-windows r-icon"
+								aria-hidden="true"></i>
+						</a>
+						<h2>Available On</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit. Accusantium quae velit voluptas.
+						</p>
+						<a href="https://www.flipkart.com/" target="_blank">
+							Learn More
+						</a>
+					</div>
+
+					<div>
+						<a href="https://www.meesho.com/" target="_blank">
+							<i
+								class="fa fa-google r-icon"
+								aria-hidden="true"></i>
+						</a>
+						<h2>Clothes Design</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit. Accusantium quae velit voluptas.
+						</p>
+						<a href="https://www.meesho.com/"> Learn More </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Services Section end's here -->
+
+		<!-- Contact Section start's here -->
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="contact-left">
+						<h1 class="sub-title">Contact Me</h1>
+						<p><i class="fa fa-paper-plane"></i> contact@xyz.com</p>
+						<p><i class="fa fa-phone"></i> 1234567890</p>
+						<div class="social-icons">
+							<a href="https://www.facebook.com" target="_blank"
+								><i class="fa fa-facebook-square"></i
+							></a>
+							<a href="https://www.twitter.com" target="_blank"
+								><i class="fa fa-twitter-square"></i
+							></a>
+							<a href="https://www.instagram.com" target="_blank"
+								><i class="fa fa-instagram"></i
+							></a>
+							<a href="https://www.linkedin.com" target="_blank"
+								><i class="fa fa-linkedin-square"></i
+							></a>
+						</div>
+					</div>
+					<div class="contact-right">
+						<form>
+							<div class="input-field">
+								<input
+									type="text"
+									id="name"
+									class="form_input"
+									placeholder=" "
+									autocomplete="off"
+									required /><label
+									class="form_label"
+									for="name"
+									>Enter Name</label
+								>
+							</div>
+							<div class="input-field">
+								<input
+									type="email"
+									id="email"
+									class="form_input"
+									placeholder=" "
+									autocomplete="off"
+									required />
+								<label class="form_label" for="email"
+									>Enter Email</label
+								>
+							</div>
+							<div class="input-field">
+								<textarea
+									name="Message"
+									id="message"
+									class="form_textarea"
+									placeholder=" "
+									autocomplete="off"
+									rows="6"></textarea
+								><label for="message" class="form_label"
+									>Message</label
+								>
+							</div>
+							<button type="submit" class="submit_btn">
+								Submit
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Contact Section end's here -->
+
+		<!-- Footer Section start's here -->
+		<footer class="footer">
+			<p>
+				Copyright © MS. Make Sure to Drop a
+				<a href="https://www.instagram.com/manthan.vs"
+					><i class="fa fa-heart"></i
+				></a>
+			</p>
+		</footer>
+		<!-- Footer Section end's here -->
+
+		<script>
+			var side_menu = document.getElementById("sidemenu");
+
+			function openmenu() {
+				side_menu.style.right = "0";
+			}
+
+			function closemenu() {
+				side_menu.style.right = "-200px";
+			}
+		</script>
 	</body>
 </html>
