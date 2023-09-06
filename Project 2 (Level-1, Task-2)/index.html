@@ -71,7 +71,9 @@
 
 					<ul class="nav-list">
 						<li class="nav-item">
-							<a href="#home" class="nav-link">Home</a>
+							<a href="#home" class="nav-link active-link"
+								>Home</a
+							>
 						</li>
 
 						<li class="nav-item">
@@ -83,7 +85,9 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="#contact" class="nav-link">Contact Me</a>
+							<a href="#contact" class="nav-link nav-link-button"
+								>Contact Me</a
+							>
 						</li>
 					</ul>
 
@@ -94,6 +98,9 @@
 				</div>
 
 				<div class="nav-buttons">
+					<!-- Theme Button -->
+					<i class="ri-moon-fill change-theme" id="theme-button"></i>
+
 					<!-- Toggel Button -->
 					<div class="nav-toggle" id="nav-toggle">
 						<i class="ri-menu-4-line"></i>
@@ -225,7 +232,7 @@
 			</section>
 
 			<!-- SERVICES -->
-			<section class="services section" id="services">
+			<section class="services section">
 				<h2 class="section-title-2">
 					<span> Services </span>
 				</h2>
@@ -296,7 +303,7 @@
 					<span>Projects.</span>
 				</h2>
 
-				<div class="porjects-container container grid">
+				<div class="projects-container container grid">
 					<article class="projects-card">
 						<div class="projects-image">
 							<img
@@ -547,30 +554,34 @@
 										>Email Address</label
 									>
 								</div>
-
-								<div class="contact-box">
-									<input
-										type="text"
-										name="user-subject"
-										class="contact-input"
-										id="subject"
-										required
-										placeholder="Subject" />
-									<label for="subject" class="contact-label">
-										Subject</label>
-								</div>
-
-								<div class="contact-box content-area">
-									<textarea
-										name="user-message"
-										id="message"
-										class="contact-input"
-										required
-										placeholder="">Message</textarea>
-									<label for="message" class="contact-label">
-										Message</label>
-								</div>
 							</div>
+
+							<div class="contact-box">
+								<input
+									type="text"
+									name="user-subject"
+									class="contact-input"
+									id="subject"
+									required
+									placeholder="Subject" />
+								<label for="subject" class="contact-label">
+									Subject</label
+								>
+							</div>
+
+							<div class="contact-box contact-area">
+								<textarea
+									name="user-message"
+									id="message"
+									class="contact-input"
+									required
+									placeholder="Message"></textarea>
+								<label for="message" class="contact-label">
+									Message</label
+								>
+							</div>
+
+							<p class="contact-message" id="contact-message"></p>
 
 							<button type="submit" class="contact-button button">
 								<i class="ri-send-plane-line"></i> Send Message
@@ -579,26 +590,38 @@
 					</div>
 
 					<div class="contact-social">
-						<img src="assets/img/curved-arrow.svg" alt="" class="contact-social-arrow">
+						<img
+							src="assets/img/curved-arrow.svg"
+							alt=""
+							class="contact-social-arrow" />
 
 						<div class="contact-social-data">
 							<div>
 								<p class="contact-social-description-1">
-									Does not send emails
+									Does not send emails!!
 								</p>
-								<p class="contact-social-description-1">
+								<p class="contact-social-description-2">
 									Write me on my Social Networks
 								</p>
 							</div>
 
 							<div class="contact-social-links">
-								<a href="https://www.facebook.com/manthansankpal" target="_blank" class="contact-social-link">
+								<a
+									href="https://www.facebook.com/manthansankpal"
+									target="_blank"
+									class="contact-social-link">
 									<i class="ri-facebook-circle-line"></i>
 								</a>
-								<a href="https://www.instagram.com/manthan.vs" target="_blank" class="contact-social-link">
+								<a
+									href="https://www.instagram.com/manthan.vs"
+									target="_blank"
+									class="contact-social-link">
 									<i class="ri-instagram-line"></i>
 								</a>
-								<a href="https://www.linkedin.com/in/manthanvs" target="_blank" class="contact-social-link">
+								<a
+									href="https://www.linkedin.com/in/manthanvs"
+									target="_blank"
+									class="contact-social-link">
 									<i class="ri-linkedin-box-line"></i>
 								</a>
 							</div>
@@ -609,14 +632,40 @@
 		</main>
 
 		<!-- FOOTER -->
-		<footer class="footer"></footer>
+		<footer class="footer">
+			<div class="footer-container container grid">
+				<ul class="footer-links">
+					<li>
+						<a href="#about" class="footer-link">About</a>
+					</li>
+					<li>
+						<a href="#services" class="footer-link">Services</a>
+					</li>
+					<li>
+						<a href="#projects" class="footer-link">Projects</a>
+					</li>
+				</ul>
+
+				<span class="footer-copy">
+					© All Rights Reserved By
+					<a href="">Manthan.vs</a>
+				</span>
+			</div>
+		</footer>
 
 		<!-- SCROLL UP -->
 
+		<a href="#home" class="scrollup" id="scroll-up">
+			<i class="ri-arrow-up-s-line"></i>
+		</a>
+
 		<!-- SCROLLREVEAL -->
-		<script src=""></script>
+		<script src="assets/js/scrollreveal.min.js"></script>
+		<!-- used scroll reveal from https://scrollrevealjs.org/ -->
 
 		<!-- EMAIL JS -->
+
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 		<!-- MAIN JS -->
 		<script src="assets/js/main.js"></script>
