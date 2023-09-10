@@ -384,7 +384,6 @@ body{
 	background: linear-gradient(#080808,transparent,#080808),url(images/blue-spots-on-dark-3bhhlfvc36fhoibo.jpg) no-repeat center ;
 	background-size: 100%;
 	height: 80vh;
-	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
