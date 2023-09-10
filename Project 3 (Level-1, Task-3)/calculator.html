@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		
+		<!-- FAVICON START -->
+
+			<!-- For Android Chrome -->
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="192x192"
+				href="assets/img/favicon_io/android-chrome-192x192.png" />
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="512x512"
+				href="assets/img/favicon_io/android-chrome-512x512.png" />
+
+			<!-- For Apple Touch Icon -->
+			<link
+				rel="apple-touch-icon"
+				href="assets/img/favicon_io/apple-touch-icon.png" />
+
+			<!-- For Favicon -->
+			<link
+				rel="icon"
+				type="image/x-icon"
+				href="assets/img/favicon_io/favicon.ico" />
+
+			<!-- For Favicon in different sizes -->
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="16x16"
+				href="assets/img/favicon_io/favicon-16x16.png" />
+			<link
+				rel="icon"
+				type="image/png"
+				sizes="32x32"
+				href="assets/img/favicon_io/favicon-32x32.png" />
+
+		<!-- FAVICON END -->
+
+		<!-- REMIXICONS -->
+		<!-- Using REMIXICONS for different Experience -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
+			crossorigin="" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/css/styles.css" />
+
+		<title>Calculator ~ Manthan VS</title>
+	</head>
+	<body>
+		<!-- Main -->
+		<div class="main">
+			<div class="container">
+				<div class="heading">
+					<span><a href="https://github.com/manthanvs" target="_blank"><i class="ri-calculator-line"></i></a></span>
+					<span>Calculator</span>
+					<span>
+						<label>
+							<i
+								class="ri-moon-line change-theme"
+								id="theme-button"></i>
+						</label>
+					</span>
+				</div>
+				<div class="result">
+					<div class="history">
+						<p class="upper-value"></p>
+					</div>
+					<div class="output">
+						<p class="lower-value"></p>
+					</div>
+				</div>
+				<div id="keyboard">
+					<div class="group">
+						<div class="top-section">
+							<button class="operator" id="clear">C</button>
+							<button class="operator" id="backspace">
+								<i class="ri-delete-back-2-line icon"></i>
+							</button>
+							<button class="operator" id="%">%</button>
+						</div>
+						<div class="middle-section">
+							<div>
+								<button class="number" id="7">7</button>
+								<button class="number" id="8">8</button>
+								<button class="number" id="9">9</button>
+							</div>
+							<div>
+								<button class="number" id="4">4</button>
+								<button class="number" id="5">5</button>
+								<button class="number" id="6">6</button>
+							</div>
+							<div>
+								<button class="number" id="1">1</button>
+								<button class="number" id="2">2</button>
+								<button class="number" id="3">3</button>
+							</div>
+							<div>
+								<button class="number" id="00">00</button>
+								<button class="number" id="0">0</button>
+							</div>
+						</div>
+					</div>
+					<div class="side-section">
+						<button class="operator" id="/">/</button>
+						<button class="operator" id="*">x</button>
+						<button class="operator" id="-">-</button>
+						<button class="operator" id="+">+</button>
+						<button class="operator equal" id="=">=</button>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+		<!-- MAIN JS -->
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
