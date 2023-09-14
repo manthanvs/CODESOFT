@@ -1,0 +1,118 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+/* VARIABLES CSS */
+:root {
+	/* Colors */
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--body-color: hsl(210, 11%, 96%);
+	--orange-color: hsl(25, 100%, 50%);
+	--black-color: hsl(0, 0%, 0%);
+	--black-color-light: hsl(0, 0%, 87%);
+	--white-color: hsl(0, 0%, 95%);
+
+	--text-color: hsl(0, 0%, 0%);
+	--text-color-light: hsl(0, 0%, 64%);
+
+	/* Font and typography */
+	/*.5rem = 8px | 1rem = 16px ...*/
+	--body-font: "Bai Jamjuree", sans-serif;
+	--biggest-font-size: 2rem;
+	--h1-font-size: 1.75rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1.125rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+
+	/* Font weight */
+	--font-regular: 400;
+	--font-medium: 500;
+	--font-semi-bold: 600;
+	--font-bold: 700;
+}
+
+/* ****** BASE */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	background-color: var(--body-color);
+	color: var(--text-color);
+	transition: background-color 0.8s; /* for dark mode */
+}
+
+#main {
+	max-width: 1280px;
+	max-height: 100%;
+	margin: 30px auto;
+	padding: 15px;
+	background-color: var(--black-color-light);
+	border-radius: 5px;
+}
+
+#title {
+	text-align: center;
+	font-size: var(--h1-font-size);
+}
+
+#main > p {
+	text-align: center;
+	font-size: var(--h3-font-size);
+}
+
+#img-div {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 15px;
+	font-size: var(--h3-font-size);
+	background-color: var(--white-color);
+}
+
+#image {
+	display: block;
+	max-width: 100%;
+	padding-bottom: 10px;
+}
+
+#tribute-info {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#tribute-info > h3 {
+	text-align: center;
+	font-size: var(--h2-font-size);;
+}
+
+#tribute-info > ul li {
+	margin-bottom: 10px;
+	line-height: 25px;
+}
+
+#tribute-quote {
+	display: flex;
+    padding: 10px;
+    font-size: var(--h3-font-size);
+    background-color: var(--white-color);
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+#tribute-quote .quote-author {
+	text-align: end;
+}
+
+h5 {
+	text-align: center;
+}
