@@ -4,25 +4,24 @@
 // Importing required modules
 import express from "express";
 // express-async-errors imported to remove excess use of try catch block
-import "express-async-errors"
+import "express-async-errors";
 // dotenv imported for environmental variables
 import dotenv from "dotenv";
-// cors imported to discard cross origin error 
+// cors imported to discard cross origin error
 import cors from "cors";
 // morgan imported to monitor rest api's
 import morgan from "morgan";
 
-
 // * File imports
 // function for mongoDB connection through mongoose
-import connectDB from './config/db.js';
-
+import connectDB from "./config/db.js";
 
 // routes import
-import testRoutes from './routes/TestRoute.js'
-import authRoutes from './routes/authRoutes.js'
-import errorMiddleware from './middlewares/errorMiddleware.js';
-
+import testRoutes from "./routes/TestRoute.js";
+import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import jobsRoutes from "./routes/jobsRoutes.js"
+import errorMiddleware from "./middlewares/errorMiddleware.js";
 
 // Configuring dotenv to use environment variables
 dotenv.config();
@@ -34,19 +33,19 @@ dotenv.config();
 // mongoDB connection function
 connectDB();
 
-// **Rest object 
+// **Rest object
 // created from express
 // Creating an express application
-	const app = express();
+const app = express();
 
-// ** Middlewares 
+// ** Middlewares
 
-	// in order to fetch json data from the user, we need to add middleware so that application gets to know that we are going to deal with json data.
-	app.use(express.json());
-	// in order to discard cross origin error: i.e. let ports interact with each other, we need to add middleware 
-	app.use(cors());
-	// in order to show url fetched and status log's in the console, we need to add middleware 
-	app.use(morgan("dev"));
+// in order to fetch json data from the user, we need to add middleware so that application gets to know that we are going to deal with json data.
+app.use(express.json());
+// in order to discard cross origin error: i.e. let ports interact with each other, we need to add middleware
+app.use(cors());
+// in order to show url fetched and status log's in the console, we need to add middleware
+app.use(morgan("dev"));
 
 // // Defining a route for the root path
 // app.get("/", (req, res) => {
@@ -54,22 +53,25 @@ connectDB();
 // });
 
 // ** Routes
-	app.use('/api/v1/test',testRoutes);
-	app.use('/api/v1/auth',authRoutes);
+app.use("/api/v1/test", testRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/job", jobsRoutes);
 
 // validation middleware
 // ! used errorMiddleware after the routes because if we use errorMiddleware in start then further code won't be used.
-	app.use(errorMiddleware);
+app.use(errorMiddleware);
 
 // ** Extracting port
 //  from environment variables
 const DEFAULT_PORT = 8080;
-const DEFAULT_DEV_MODE = 'development';
+const DEFAULT_DEV_MODE = "development";
 const PORT = process.env.PORT || DEFAULT_PORT;
 const DEV_MODE = process.env.DEV_MODE || DEFAULT_DEV_MODE;
 
-
 // ** Starting the server
 app.listen(PORT, () => {
-	console.log(`Node Server is in ${DEV_MODE} mode and it is running on port ${PORT}`);
-})
+	console.log(
+		`Node Server is in ${DEV_MODE} mode and it is running on port ${PORT}`
+	);
+});
