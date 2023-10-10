@@ -33,7 +33,7 @@ import userModels from "../models/userModels.js";
 // //* when we don't use express-async-errors package.
 
 export const registerController = async (req, res, next) => {
-	const { name, email, password } = req.body;
+	const { name, email, password,lastName,location } = req.body;
 
 	// // validate weather the unpack variables are loaded or not
 	// if (!name) {
@@ -51,7 +51,8 @@ export const registerController = async (req, res, next) => {
 	// 	next("Email Already Registered Please Login.");
 	// }
 
-	const user = await userModels.create({ name, email, password });
+
+	const user = await userModels.create({ name, email, password,lastName, location });
 	// * Creating a token
 	// token with the help of JWT
 	const token = user.createJWT();

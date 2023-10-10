@@ -24,6 +24,7 @@ export const getAllJobController = async (req, res, next) => {
 	const queryObject = {
 		createdBy: req.user.userId,
 	};
+
 	// console.log(queryObject); // this will contain the createdBy : user's Id
 	// * Logic of Filters
 	// * STATUS
@@ -71,11 +72,43 @@ export const getAllJobController = async (req, res, next) => {
 		queryResult = queryResult.sort("-position");
 	}
 
-	const jobs = await queryResult;
+	// * Total Jobs
+	const totalJobs = await jobsModels.countDocuments(queryResult);
 
+	// * Pagination
+	const page = Number(req.query.page) || 1;
+	const limit = Number(req.query.limit) || 10;
+
+	const skip = (page - 1) * limit; // the page itself - 1 then multiply the limit to it.
+	// basically for 2nd page, 10 records should be skipped because 10 records are shown in the 1st page.
+	// so for skip = (2` - 1) * 10` i.e. 1*10` = 10
+	// for 3rd page, 20 records should be skipped because 20 records are shown in the 1st and 2nd page.
+	// so for skip = (3` - 1) * 10` i.e. 2*10` = 20
+	// and likewise.
+
+	// * Mongodb Has it's own skip function and limit function for pagination.
+	// queryResult.skip() this function consider's all records after skipping specific number of records.
+	// queryResult.limit() this function consider's specific number of records. i.e. suppose for queryResult.limit(10)it will take only 10 records into consideration.
+
+	// queryResult.skip(skip).limit(limit) this will skip the number of records and then take the specific number of records into consideration.
+
+	queryResult = queryResult.skip(skip).limit(limit);
+
+	// * Counting Jobs on that particular page
+	const jobsOnPage = await jobsModels.countDocuments(queryResult);
+
+	// * Page Number.
+	const numOfPages = Math.ceil(totalJobs / limit);
+
+	// * Sending the response
+	const jobs = await queryResult;
 	// const jobs = await jobsModels.find({ createdBy: req.user.userId }); // * used when All jobs to be displayed
+
 	res.status(200).json({
-		totalJobs: jobs.length,
+		totalJobs,
+		numOfPages,
+		page,
+		jobsOnPage,
 		jobs,
 	});
 };
@@ -190,8 +223,6 @@ export const jobStatsController = async (req, res) => {
 		reject: short_stats.reject || 0,
 		interview: short_stats.interview || 0,
 	};
-
-	console.log(short_stats);
 
 	// * Monthly / yearly statistics
 
