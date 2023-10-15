@@ -44,8 +44,7 @@ dotenv.config();
 // * mongoDB connection function
 connectDB();
 
-// * Swagger API config
-// * Swagger API options
+// * Swagger API config & Swagger API options
 const options = {
 	definition: {
 		openapi: "3.0.3",
@@ -70,7 +69,6 @@ const spec = swaggerDoc(options);
 const app = express();
 
 // ** Middlewares
-
 // in order to maintain the security "Helmet" helps secure Express apps by setting HTTP response headers.
 app.use(helmet());
 // in order to save the inputs from xss attacks we use the "xss-clean" package.

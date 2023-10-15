@@ -7,7 +7,7 @@ export const createJobController = async (req, res, next) => {
 	const { company, position } = req.body;
 
 	if (!company || !position) {
-		next("Please Provide All Fields!");
+		next("Please Provide Company and Position Fields!");
 	}
 
 	req.body.createdBy = req.user.userId;
@@ -72,7 +72,7 @@ export const getAllJobController = async (req, res, next) => {
 		queryResult = queryResult.sort("-position");
 	}
 
-	// * Total Jobs
+	// * Total Jobs (total jobs are counted on the basis of filtered jobs)
 	const totalJobs = await jobsModels.countDocuments(queryResult);
 
 	// * Pagination
@@ -224,8 +224,13 @@ export const jobStatsController = async (req, res) => {
 		interview: short_stats.interview || 0,
 	};
 
-	// * Monthly / yearly statistics
+	// * Total Jobs created By the respective user. (total jobs are counted on basis of "createdBy:[specific user]" )
+	const totalJobs = Object.values(short_stats).reduce(
+		(sum, value) => sum + value,
+		0
+	);
 
+	// * Monthly / yearly statistics
 	let monthlyApplications = await jobsModels.aggregate([
 		// search by user jobs
 		{
@@ -257,8 +262,7 @@ export const jobStatsController = async (req, res) => {
 			"count":6
 		]
 
-		but after using moment library the same API shows a proper 
-		timestamp 
+		but after using moment library the same API shows a proper timestamp 
 		=>
 			monthlyApplications:[
 				{
@@ -282,7 +286,7 @@ export const jobStatsController = async (req, res) => {
 		.reverse();
 
 	res.status(200).json({
-		totalJobs: stats.length,
+		totalJobs,
 		defaultStats,
 		monthlyApplications,
 	});

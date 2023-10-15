@@ -32,6 +32,7 @@ import userModels from "../models/userModels.js";
 // };
 // //* when we don't use express-async-errors package.
 
+// * Register Controller
 export const registerController = async (req, res, next) => {
 	const { name, email, password,lastName,location } = req.body;
 
@@ -72,6 +73,7 @@ export const registerController = async (req, res, next) => {
 };
 // //* when we use express-async-errors package. i.e. discard the try catch block.
 
+// * Login Controller
 export const loginController = async (req, res, next) => {
 	const { email, password } = req.body;
 	// validation
